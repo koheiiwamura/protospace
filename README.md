@@ -7,13 +7,13 @@
 has_many :prototypes,:likes,:comments
 ~~~
 **table**
--name
--email
--password
--member_of
--profile
--works
--image_url
+- name
+- email
+- password
+- member_of
+- profile
+- works
+- image_url
 
 ##Prototype
 **association**
@@ -22,10 +22,10 @@ has_many :likes,:comments,:captured_images
 belongs_to :user
 ~~~
 **table**
--title
--catchcopy
--concept
--user_id
+- title
+- catchcopy
+- concept
+- user_id
 
 
 ##Like
@@ -34,8 +34,8 @@ belongs_to :user
 belongs_to :user,:prototype,:comment
 ~~~
 **table**
--user_id
--prototype_id
+- user_id
+- prototype_id
 
 ##Comment
 **association**
@@ -43,9 +43,9 @@ belongs_to :user,:prototype,:comment
 belongs_to :user,:prototype
 ~~~
 **table**
--content
--user_id
--prototype_id
+- content
+- user_id
+- prototype_id
 
 ##CapturedImage
 **association**
@@ -53,6 +53,6 @@ belongs_to :user,:prototype
 belongs_to :prototype
 ~~~
 **table**
--image_id
--image_url
--prototype_url
+- image_id
+- image_url
+- prototype_url
