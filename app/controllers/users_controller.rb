@@ -7,9 +7,10 @@ class UsersController < ApplicationController
   def update
     @user.update(update_params)
     if @user.update(update_params)
-      redirect_to root_path
+      redirect_to root_path,notice:"更新に成功しました"
     else
-      redirect_to edit_user_path(@user)
+      flash.now[:alert] = "更新に失敗しました"
+      render :edit
     end
   end
 
