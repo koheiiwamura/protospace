@@ -6,7 +6,11 @@ class UsersController < ApplicationController
   end
   def update
     @user.update(update_params)
-    redirect_to root_path
+    if @user.update(update_params)
+      redirect_to root_path
+    else
+      redirect_to edit_user_path(@user)
+    end
   end
 
   private
