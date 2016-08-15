@@ -48,4 +48,5 @@ end
 gem "haml-rails", "~> 0.9"
 gem 'erb2haml'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'devise'
 
