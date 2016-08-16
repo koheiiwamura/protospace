@@ -3,7 +3,7 @@ class Prototype < ActiveRecord::Base
   belongs_to :user
   accepts_nested_attributes_for :images,allow_destroy: true
 
-  validates :title, presence: true,
-  validates :catch_copy, presence: true,
-  validates :concept, presence: true,
+  validates :title, presence: true
+  validates :catch_copy, presence: true
+  validates :concept, presence: true
 end
