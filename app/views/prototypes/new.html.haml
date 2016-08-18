@@ -8,17 +8,18 @@
         .cover-image-upload
           = f.fields_for :images do |image_fields|
             = image_fields.file_field :image, required: true
+            = image_fields.hidden_field :roll, value: "main"
       .col-md-12
         %ul.proto-sub-list.list-group
           %li.list-group-item.col-md-4
             .image-upload
               = f.fields_for :images do |image_fields|
-                = image_fields.file_field :image, required: true
+                = image_fields.file_field :image
                 = image_fields.hidden_field :roll, value: "sub"
           %li.list-group-item.col-md-4
             .image-upload
               = f.fields_for :images do |image_fields|
-                = image_fields.file_field :image, required: true
+                = image_fields.file_field :image
                 = image_fields.hidden_field :roll, value: "sub"
           %li.list-group-item.col-md-4
             .image-upload-plus
@@ -38,4 +39,4 @@
           .col-md-3
             %input{type: "text", placeholder: "Application"}/
     .row.text-center.proto-btn
-      = f.submit "Publish",:class=>"button.btn.btn-lg btn-primary btn-block"
+      = f.submit "Publish", :class=>"button btn btn-lg btn-primary btn-block"
