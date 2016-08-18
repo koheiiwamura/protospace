@@ -11,10 +11,10 @@ class PrototypesController < ApplicationController
   def create
     @prototype = Prototype.new(create_params)
      if @prototype.save
-       flash[:notice] = '更新できました'
+       flash[:notice] = '投稿できました'
        redirect_to action: :index
      else
-       flash[:alert] = '更新できません'
+       flash[:alert] = '投稿に失敗しました'
        render :new
      end
     # Prototype.create(create_params)
