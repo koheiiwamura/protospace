@@ -10,14 +10,14 @@
           = link_to "Popular PROTO","#"
         %li{role: "presentation"}
           = link_to "Newest Proto","#"
-      %button{type: "button", class: "btn btn-default col-lg-1"} View Tags
+      = button_to "View Tags","",{class: "btn btn-default col-lg-1"}
 
 .container.proto-list
   .row
     - @prototypes.each do |prototype|
       .col-sm-4.col-md-3.proto-content
         .thumbnail
-          %a{href: "/prototypes/#{prototype.id}"}
+          = link_to "/prototypes/#{prototype.id}" do
             = image_tag prototype.main_img
             .caption
               %h3
@@ -26,7 +26,7 @@
                 .proto-user
                   = link_to "by #{prototype.user.username}","#"
                 .proto-posted
-                  = prototype.created_at.strftime("%-b %-d")
+                  = prototype.created_at.strftime("%b %d")
               %ul.proto-tag-list.list-inline
                 %li
                   = link_to "ipad","#",class:"btn btn-default"

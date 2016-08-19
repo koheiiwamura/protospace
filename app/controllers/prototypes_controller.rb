@@ -1,7 +1,7 @@
 class PrototypesController < ApplicationController
+  before_action :all_prototype, only: :index
 
   def index
-    @prototypes = Prototype.all.includes(:user)
   end
 
   def new
@@ -23,5 +23,9 @@ class PrototypesController < ApplicationController
   private
   def create_params
     params.require(:prototype).permit(:title,:catch_copy,:concept,images_attributes: [:image,:roll]).merge(user_id:current_user.id)
+  end
+
+  def all_prototype
+    @prototypes = Prototype.all.includes(:user)
   end
 end
