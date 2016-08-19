@@ -1,0 +1,16 @@
+.col-sm-4.col-md-3.proto-content
+  .thumbnail
+    = link_to image_tag(prototype.main_img), prototype_path(prototype.id)
+    .caption
+      %h3
+        = prototype.title
+      .proto-meta
+        .proto-user
+          = link_to "by #{prototype.user.username}", "/users/#{prototype.user.id}"
+        .proto-posted
+          = prototype.created_at.strftime("%b %d")
+      %ul.proto-tag-list.list-inline
+        %li
+          = link_to "ipad", "#", class:"btn btn-default"
+        %li
+          = link_to "wireframe", "#", class:"btn btn-default"
