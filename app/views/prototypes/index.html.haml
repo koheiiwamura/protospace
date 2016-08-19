@@ -10,42 +10,13 @@
           = link_to "Popular PROTO","#"
         %li{role: "presentation"}
           = link_to "Newest Proto","#"
-<<<<<<< HEAD
-<<<<<<< HEAD
-      %button{type: "button", class: "btn btn-default col-lg-1"} View Tags
-=======
       = button_to "View Tags", "", class: "btn btn-default col-lg-1"
->>>>>>> prototype-index
-=======
-      = button_to "View Tags", "", class: "btn btn-default col-lg-1"
->>>>>>> prototype-index
 
 .container.proto-list
   .row
     - @prototypes.each do |prototype|
       .col-sm-4.col-md-3.proto-content
         .thumbnail
-<<<<<<< HEAD
-<<<<<<< HEAD
-          %a{href: "/prototypes/#{prototype.id}"}
-            = image_tag(prototype.images.main.first.image)
-            .caption
-              %h3
-                = prototype.title
-              .proto-meta
-                .proto-user
-                  = link_to "by #{prototype.user.username}","#"
-                .proto-posted
-                  = prototype.created_at.strftime("%-b %-d")
-              %ul.proto-tag-list.list-inline
-                %li
-                  = link_to "ipad","#",class:"btn btn-default"
-                %li
-                  = link_to "wireframe","#",class:"btn btn-default"
-
-=======
-=======
->>>>>>> prototype-index
           = link_to image_tag(prototype.main_img), prototype_path(prototype.id)
           .caption
             %h3
@@ -60,10 +31,6 @@
                 = link_to "ipad","#",class:"btn btn-default"
               %li
                 = link_to "wireframe","#",class:"btn btn-default"
-<<<<<<< HEAD
->>>>>>> prototype-index
-=======
->>>>>>> prototype-index
 
 .text-center
   %ul.pagination
