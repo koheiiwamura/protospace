@@ -1,9 +1,13 @@
 class UsersController < ApplicationController
   before_action :set_user,only:[:show,:edit,:update]
+
   def show
+    @prototypes = @user.prototypes
   end
+
   def edit
   end
+
   def update
     @user.update(update_params)
     if @user.update(update_params)
