@@ -9,7 +9,7 @@
             = f.text_field :username, type:"text",placeholder:"Username"
           .user-image.col-md-2
             %button.btn.btn-primary Add image
-            = f.file_field :""
+            = f.file_field :"avatar"
         = f.email_field :email,type:"email",placeholder:"E-mail"
         = f.password_field :password,type:"password",placeholder:"Password"
       .col-md-12
