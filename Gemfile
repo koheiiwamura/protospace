@@ -51,4 +51,4 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
-
+gem 'bullet', :group => :development

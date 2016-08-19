@@ -2,7 +2,6 @@ class PrototypesController < ApplicationController
   before_action :set_prototypes, only: :index
 
   def index
-    @prototypes = Prototype.all
   end
 
   def new
