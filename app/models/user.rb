@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :prototypes
+  mount_uploader :avatar, ImageUploader
 
   validates :username, presence: true, length: {maximum:10}
   validates :email, presence: true, uniqueness: true
@@ -12,4 +13,5 @@ class User < ActiveRecord::Base
   validates :member, presence: true
   validates :profile, presence: true
   validates :works, presence: true
+  validates :avatar, presence: true
 end

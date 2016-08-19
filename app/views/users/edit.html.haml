@@ -8,7 +8,7 @@
             = f.text_field :username, placeholder: "Username", value:@user.username
           .user-image.col-md-2{style: 'background-image: url(http://泣ける動画.com/wp-content/uploads/2015/01/t0205-01.jpg);'}
             %button.btn.btn-primary Change image
-            = f.file_field :""
+            = f.file_field :"avatar"
         = f.email_field :email,class:"user-email", placeholder: "E-Mail", value:@user.email
         = f.password_field :password,class:"user-password", placeholder: "Password"
       .col-md-12
