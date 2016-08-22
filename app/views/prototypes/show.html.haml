@@ -20,15 +20,12 @@
         %span.num 20
   .row
     .col-md-9
-      = image_tag(@prototype.main_img, class: 'img-responsive')
-    .col-md-3
-      %ul.proto-sub-list.list-group
-        - if @prototype.images.sub.first.image?
+      = image_tag(@prototype.main_image, class: 'img-responsive')
+    - @prototype.sub_images.each do |sub_image|
+      .col-md-3
+        %ul.proto-sub-list.list-group
           %li.list-group-item
-            = image_tag(@prototype.sub_img_first, class: 'img-responsive')
-        - if @prototype.images.sub.second.image?
-          %li.list-group-item
-            = image_tag(@prototype.sub_img_second, class: 'img-responsive')
+            = image_tag(sub_image.image, class: 'img-responsive')
   .row.proto-description
     .col-md-3
       %h4 Catch Copy

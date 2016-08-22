@@ -1,6 +1,16 @@
-.col-sm-4.col-md-3.proto-content
+.col-sm-4.col-md-3.proto-
+  -if current_user.present?
+    - if prototype.user.id == current_user.id
+      .dropdown.drop_menu_location
+        %button#dropdownMenu.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"} ACTION
+        %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu1"}
+          %li
+            %a{"data-method" => "delete", :rel => "nofollow", :href => "/prototypes/#{prototype.id}"} Delete
+          %li
+            = link_to "Edit", edit_prototype_path(prototype.id)
+
   .thumbnail
-    = link_to image_tag(prototype.main_img), prototype_path(prototype.id)
+    = link_to image_tag(prototype.main_image), prototype_path(prototype.id)
     .caption
       %h3
         = prototype.title
