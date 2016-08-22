@@ -13,7 +13,7 @@
             = main_image_fields.hidden_field :roll, value: "main"
       .col-md-12
         %ul.proto-sub-list.list-group
-          - @prototype.sub_img.each do |sub_image|
+          - @prototype.sub_images.each do |sub_image|
             %li.list-group-item.col-md-4
               .image-upload
                 = f.fields_for :images, sub_image do |sub_image_fields|

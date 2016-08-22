@@ -7,11 +7,11 @@ class Prototype < ActiveRecord::Base
   validates :catch_copy, presence: true
   validates :concept, presence: true
 
-  def main_img
+  def main_image
     images.main.first.image
   end
 
-  def sub_img
+  def sub_images
     images.sub
   end
 end

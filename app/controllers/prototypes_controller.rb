@@ -36,8 +36,13 @@ class PrototypesController < ApplicationController
   end
 
   def destroy
-    @prototype.destroy
-    redirect_to root_path, warning:"削除しました"
+    if current_user.id == @prototype.user_id
+      @prototype.destroy
+      redirect_to root_path, warning:"削除しました"
+    else
+      flash[:alert] = '削除できませんでした'
+      redirect_to root_path
+    end
   end
 
   private
