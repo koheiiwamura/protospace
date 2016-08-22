@@ -15,7 +15,7 @@ class PrototypesController < ApplicationController
      if @prototype.save
        redirect_to root_path,notice:"投稿しました"
      else
-       flash[:alert] = '投稿に失敗しました'
+       flash[:alert] = "投稿に失敗しました"
        render :new
      end
   end
@@ -30,7 +30,7 @@ class PrototypesController < ApplicationController
     if @prototype.update(update_params)
       redirect_to root_path, success:"更新しました"
     else
-      flash[:alert] = '更新できませんでした'
+      flash[:alert] = "更新できませんでした"
       render :edit
     end
   end
@@ -40,8 +40,7 @@ class PrototypesController < ApplicationController
       @prototype.destroy
       redirect_to root_path, warning:"削除しました"
     else
-      flash[:alert] = '削除できませんでした'
-      redirect_to root_path
+      redirect_to root_path, alert:"削除できませんでした"
     end
   end
 
