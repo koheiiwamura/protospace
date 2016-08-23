@@ -1,5 +1,6 @@
 class Prototype < ActiveRecord::Base
   has_many :images, dependent: :destroy
+  has_many :likes, dependent: :destroy
   belongs_to :user
   accepts_nested_attributes_for :images, allow_destroy: true
 
@@ -9,6 +10,10 @@ class Prototype < ActiveRecord::Base
 
   def main_image
     images.main.first.image
+  end
+
+  def like_user(user_id)
+    likes.find_by(user_id: user_id)
   end
 
   def sub_images
