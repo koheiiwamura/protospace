@@ -1,0 +1,10 @@
+- comments.each do |comment|
+  .media
+    .media-left
+      = link_to image_tag(comment.user.avatar, {alt: "64x64", "data-holder-rendered": "true", "data-src": "holder.js/64x64", style: "width: 64px; height: 64px;"}),user_path(comment.user)
+    .media-body
+      %h4#top-aligned-media.media-heading
+        = comment.user.username
+        %a.anchorjs-link
+          %span.anchorjs-icon
+      = comment.text
