@@ -14,10 +14,9 @@
               = @prototype.user.member
 
     .col-md-6.text-right
-      = button_to "", class:"btn btn-default" do
-        = image_tag("icon_heart.svg")
-        Like
-        %span.num 20
+      #like_buttons
+        = render partial:"likes/like", locals:{prototype: @prototype}
+
   .row
     .col-md-9
       = image_tag(@prototype.main_image, class: 'img-responsive')
