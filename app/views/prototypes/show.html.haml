@@ -15,7 +15,7 @@
 
     .col-md-6.text-right
       #like_buttons
-        = render partial:"likes/like", locals:{prototype: @prototype}
+        = render partial:"likes/like", locals:{prototype: @prototype, like: @like}
 
   .row
     .col-md-9
