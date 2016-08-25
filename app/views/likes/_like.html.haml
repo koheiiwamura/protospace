@@ -12,7 +12,8 @@
       %span#like-sum
         = prototype.likes_count
 - else
-  .btn.btn-default
+  = button_to prototypes_path,method: :get, class: "btn btn-default", remote: true do
+    = image_tag("icon_heart.svg")
     Like
-    %span
+    %span#like-sum
       = prototype.likes_count
