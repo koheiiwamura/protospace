@@ -619,6 +619,7 @@ body {
   color: white;
   font-size: 30px;
   font-weight: 200;
+  margin-top: 0;
 }
 
 .tag-project {
@@ -629,4 +630,11 @@ body {
   position: absolute;
   top: 10px;
   left: 20px;
+}
+
+.tagbtn{
+  width: 360px;
+  text-align: center;
+  display:block;
+  margin-top:15px;
 }
