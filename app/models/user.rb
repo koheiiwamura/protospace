@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :prototypes
   has_many :likes
+  has_many :comments
   mount_uploader :avatar, ImageUploader
 
   validates :username, presence: true, length: {maximum:10}

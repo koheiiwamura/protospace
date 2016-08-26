@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160822064539) do
+ActiveRecord::Schema.define(version: 20160825103239) do
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "prototype_id", limit: 4
+    t.integer  "user_id",      limit: 4
+    t.text     "text",         limit: 65535
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
 
   create_table "images", force: :cascade do |t|
     t.datetime "created_at",                           null: false
@@ -29,13 +37,14 @@ ActiveRecord::Schema.define(version: 20160822064539) do
   end
 
   create_table "prototypes", force: :cascade do |t|
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
-    t.string   "title",       limit: 255
-    t.text     "catch_copy",  limit: 65535
-    t.text     "concept",     limit: 65535
-    t.integer  "user_id",     limit: 4
-    t.integer  "likes_count", limit: 4,     default: 0
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.string   "title",          limit: 255
+    t.text     "catch_copy",     limit: 65535
+    t.text     "concept",        limit: 65535
+    t.integer  "user_id",        limit: 4
+    t.integer  "likes_count",    limit: 4,     default: 0
+    t.integer  "comments_count", limit: 4,     default: 0
   end
 
   add_index "prototypes", ["user_id"], name: "index_prototypes_on_user_id", using: :btree
