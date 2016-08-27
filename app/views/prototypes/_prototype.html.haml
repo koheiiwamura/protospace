@@ -19,8 +19,4 @@
           = link_to "by #{prototype.user.username}", "/users/#{prototype.user.id}"
         .proto-posted
           = prototype.created_at.strftime("%b %d")
-      %ul.proto-tag-list.list-inline
-        %li
-          = link_to "ipad", "#", class:"btn btn-default"
-        %li
-          = link_to "wireframe", "#", class:"btn btn-default"
+          = render partial:"tags/tag",locals:{prototype: prototype}

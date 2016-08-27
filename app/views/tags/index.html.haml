@@ -1,0 +1,9 @@
+.container
+  .row
+    - @tags.each do |tag|
+      .col-sm-4.col-sm-3
+        = button_to tag_path(tag), class: "tag thumbnail tagbtn", method: "get" do
+          .tag-name
+            = tag.name
+          .tag-project
+            #{tag.taggings_count} projects

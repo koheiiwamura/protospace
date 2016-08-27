@@ -1,0 +1,6 @@
+.container
+  .row
+    .tag-header
+      %span # #{@tag.name}
+    - @prototypes.each do |prototype|
+      = render partial: "prototypes/prototype", locals:{prototype: prototype}

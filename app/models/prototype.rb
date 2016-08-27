@@ -9,6 +9,9 @@ class Prototype < ActiveRecord::Base
   validates :catch_copy, presence: true
   validates :concept, presence: true
 
+  acts_as_ordered_taggable_on :prototypes
+  acts_as_taggable
+
   def main_image
     images.main.first.image
   end

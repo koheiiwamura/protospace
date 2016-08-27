@@ -2,7 +2,7 @@ class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:show, :edit, :update, :destroy]
 
   def index
-    @prototypes = Prototype.all.includes(:user).page(params[:page]).per(8)
+    @prototypes = Prototype.all.includes(:user, :tags).page(params[:page]).per(8)
   end
 
   def new
@@ -49,11 +49,11 @@ class PrototypesController < ApplicationController
 
   private
   def create_params
-    params.require(:prototype).permit(:title,:catch_copy,:concept,images_attributes: [:image,:roll]).merge(user_id:current_user.id)
+    params.require(:prototype).permit(:title,:catch_copy,:concept,images_attributes: [:image,:roll]).merge(user_id:current_user.id, tag_list: params[:prototype][:tag])
   end
 
   def update_params
-    params.require(:prototype).permit(:title,:catch_copy,:concept,images_attributes: [:id,:image,:roll]).merge(user_id:current_user.id)
+    params.require(:prototype).permit(:title,:catch_copy,:concept,images_attributes: [:id,:image,:roll]).merge(user_id:current_user.id, tag_list: params[:prototype][:tag])
   end
 
   def set_prototype
