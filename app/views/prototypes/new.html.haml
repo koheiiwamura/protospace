@@ -5,21 +5,22 @@
         = f.text_field :title, placeholder: "Title"
     .row
       .col-md-12
-        .cover-image-upload
+        .cover-image-upload.js-imgInput
           = f.fields_for :images do |image_fields|
-            = image_fields.file_field :image, required: true
+            = image_fields.file_field :image, id:'protoInput', required: true
             = image_fields.hidden_field :roll, value: "main"
+        }
       .col-md-12
         %ul.proto-sub-list.list-group
           %li.list-group-item.col-md-4
-            .image-upload
+            .image-upload.js-imgInput
               = f.fields_for :images do |image_fields|
-                = image_fields.file_field :image
+                = image_fields.file_field :image, id:'protoInput'
                 = image_fields.hidden_field :roll, value: "sub"
           %li.list-group-item.col-md-4
-            .image-upload
+            .image-upload.js-imgInput
               = f.fields_for :images do |image_fields|
-                = image_fields.file_field :image
+                = image_fields.file_field :image, id:'protoInput'
                 = image_fields.hidden_field :roll, value: "sub"
           %li.list-group-item.col-md-4
             .image-upload-plus

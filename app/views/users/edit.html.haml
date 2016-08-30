@@ -6,11 +6,13 @@
         .user-name_image.row
           .user-name.col-md-10
             = f.text_field :username, placeholder: "Username", value:@user.username
-          .user-image.col-md-2{style: 'background-image: url(http://泣ける動画.com/wp-content/uploads/2015/01/t0205-01.jpg);'}
+          .user-image.col-md-2
+            #js-imagesBox.avatar-size
+              = image_tag @user.avatar, class: "avatar-size"
             %button.btn.btn-primary Change image
-            = f.file_field :"avatar"
-        = f.email_field :email,class:"user-email", placeholder: "E-Mail", value:@user.email
-        = f.password_field :password,class:"user-password", placeholder: "Password"
+            = f.file_field :avatar, id:'fileInput'
+        = f.email_field :email, class:"user-email", placeholder: "E-Mail", value:@user.email
+        = f.password_field :password, class:"user-password", placeholder: "Password"
       .col-md-12
         %h4 Member of
         .user-user-member.row

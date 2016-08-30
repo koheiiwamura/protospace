@@ -638,3 +638,21 @@ body {
   display:block;
   margin-top:15px;
 }
+
+.avatar-size{
+  width:75px;
+  height:75px;
+  border-radius: 50%;
+  position:absolute;
+  top: 0;
+  left: -1px;
+  bottom: 0;
+  margin: auto;
+}
+
+.preEditImage{
+  display:block;
+  max-width:100%;
+  height:100%;
+  margin:0 auto;
+}

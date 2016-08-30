@@ -8,8 +8,9 @@
           .user-name.col-md-10
             = f.text_field :username, type:"text",placeholder:"Username"
           .user-image.col-md-2
+            #js-imagesBox.avatar-size
             %button.btn.btn-primary Add image
-            = f.file_field :"avatar"
+            = f.file_field :avatar, id:'fileInput'
         = f.email_field :email,type:"email",placeholder:"E-mail"
         = f.password_field :password,type:"password",placeholder:"Password"
       .col-md-12
