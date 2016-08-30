@@ -17,7 +17,7 @@ $(function(){
           var preEditImage = selfFile.find('.preEditImage');
 
           fileRdr.onload = function() {
-            selfFile.css({'background-image':'url('+fileRdr.result+')', 'background-size':'cover'});
+            selfFile.css({'background-image':'url('+fileRdr.result+')', 'background-size':'contain'});
             preEditImage.css({'display':'none'})
           }
           fileRdr.readAsDataURL(file);
