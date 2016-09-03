@@ -17,3 +17,6 @@
 
 # Ignore env.
 /.env
+
+# Ignore test-image
+/spec/fixtures/img
