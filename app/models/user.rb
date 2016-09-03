@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_many :comments
   mount_uploader :avatar, ImageUploader
 
-  validates :username, presence: true, length: {maximum:10}
+  validates :username, presence: true
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true, length: {minimum:8}
   validates :member, presence: true
