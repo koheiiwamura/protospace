@@ -36,11 +36,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'pry-rails'
   gem 'byebug'
   gem "rspec-rails"
   gem "factory_girl_rails"
   gem "faker"
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
 end
 
 group :development do
@@ -57,6 +60,10 @@ group :test do
   gem "database_cleaner"
   gem "launchy"
   gem "poltergeist"
+end
+
+group :production, :staging do
+  gem 'unicorn'
 end
 
 gem "haml-rails", "~> 0.9"
